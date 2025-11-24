@@ -59,6 +59,26 @@ public class studentdriver {
 				System.out.println("enter id to be deleted");
 				int id2=sc.nextInt();
 				int delete = service.delete(id2);
+				if(delete!=0) {
+					System.out.println("data deleted");
+				}else {
+					System.out.println("id invalid");
+				}
+				break;
+			
+			case 5:
+				boolean exit = service.exit();
+				if(exit) {
+					flag = false;
+					System.out.println("app closed");
+				}else {
+					System.out.println("app still running");
+				}
+				break;
+				
+			default:
+				System.out.println("invalid I/P");
+				break;
 				
 			}
 		}
