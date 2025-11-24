@@ -1,5 +1,6 @@
 package Student;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class studentdriver {
@@ -29,6 +30,36 @@ public class studentdriver {
 				student st = new student(id,name,age);
 				service.save(st);
 				break;
+			
+			case 2:
+				System.out.println("enter your id to be updated");
+				int id1 = sc.nextInt();
+				System.out.println("enter your name to be updated");
+				String name1=sc.next();
+				System.out.println("enter your age to be updated");
+				int age1=sc.nextInt();
+				student stud = new student(id1,name1,age1);
+				int update = service.update(stud);
+				if(update!=0) System.out.println("Updated");
+				break;
+				
+			case 3:
+				List<student> sts = service.getAll();
+				if(sts!=null) {
+					for(student stds : sts) {
+						System.out.println(stds);
+					}
+				}
+				else {
+					System.out.println("data not found");
+				}
+				break;
+				
+			case 4:
+				System.out.println("enter id to be deleted");
+				int id2=sc.nextInt();
+				int delete = service.delete(id2);
+				
 			}
 		}
 	}
