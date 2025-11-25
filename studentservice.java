@@ -5,8 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util*;
 
 public class studentservice {
 	private static String url = "jdbc:postgresql;//localhost:5432/school?user=postgres&password=6969";
